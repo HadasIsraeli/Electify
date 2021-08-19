@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import Navbar from './components/Navbar';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-// import Home from './components/Home';
-// import About from './components/About';
-// import Contact from './components/Contact';
-// import Post from './components/Post';
+import Home from './components/Home';
+import About from './components/About';
+import Contact from './components/Contact';
+import Post from './components/Post';
 import BlockApp from './components/BlockApp';
 class App extends Component {
   render() {
@@ -14,10 +14,10 @@ class App extends Component {
           <Navbar />
           <Switch>
           <Route path='/BlockApp' component={BlockApp} />
-            {/* <Route path='/Home' component={Home} />
+            <Route path='/Home' component={Home} />
             <Route path='/About' component={About} />
             <Route path='/Contact' component={Contact} />
-            <Route path="/:post_id" component={Post} /> */}
+            <Route path="/:post_id" component={Post} />
           </Switch>
         </div>
       </BrowserRouter>
