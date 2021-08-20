@@ -22,6 +22,16 @@ const ROOT_NODE_ADDRESS = `http://localhost:${DEFAULT_PORT}`
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'client/public')));
 
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    next();
+  });
+  
+
 app.get('/api/blocks', (req, res) => {
     res.json(blockchain.chain);
 });
@@ -77,9 +87,9 @@ app.get('/api/wallet-info', (req, res) => {
     });
 });
 
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'client/public/index.html'));
-});
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, 'client/public/index.html'));
+// });
 
 const syncWithRootState = () => {
     request({ url: `${ROOT_NODE_ADDRESS}/api/blocks` }, (error, response, body) => {

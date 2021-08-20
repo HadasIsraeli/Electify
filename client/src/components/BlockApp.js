@@ -1,24 +1,13 @@
-// import { response } from 'express';
 import React, { Component } from 'react';
-// import axios from 'axios';
-
+import Blocks from './Blocks';
 class BlockApp extends Component {
-    state = { walletInfo: { address: 'fooxv6', balance: 9999 } };
+    state = { walletInfo: {} };
 
     componentDidMount() {
-        fetch('https://jsonplaceholder.typicode.com/posts/')
+        fetch('http://localhost:3000/api/wallet-info')
             .then(response => response.json())
-            .then(json =>  console.log('json',json));
+            .then(json => this.setState({ walletInfo: json }));
     }
-    // componentDidMount() {
-    //     axios.get('http://localhost:3000/api/wallet-info')
-    //     .then(res => {
-    //         console.log(res)
-    //         this.setState({
-    //             walletInfo: res.json()
-    //         })
-    //     })
-    // }
 
     render() {
         const { address, balance } = this.state.walletInfo;
@@ -28,6 +17,8 @@ class BlockApp extends Component {
                 <div>Wellcome!</div>
                 <div>Adress: {address}</div>
                 <div>Balance: {balance}</div>
+                <br />
+                <Blocks />
             </div>
         );
     }
