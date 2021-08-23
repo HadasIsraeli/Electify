@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Block from './Block';
+import { NavLink } from 'react-router-dom';
 
 class Blocks extends Component {
     state = { blocks: [] };
@@ -16,6 +17,15 @@ class Blocks extends Component {
 
         return (
             <div>
+                <div>
+                    <nav className="nav-wrapper blue darken-9">
+                        <div className="container">
+                            <ul className="right">
+                                <li><NavLink to="/BlockApp">Blockchain</NavLink></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
                 <h3>Blocks</h3>
                 {
                     this.state.blocks.map(block => {

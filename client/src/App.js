@@ -6,6 +6,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Post from './components/Post';
 import BlockApp from './components/BlockApp';
+import Blocks from './components/Blocks';
 class App extends Component {
   render() {
     return (
@@ -13,7 +14,8 @@ class App extends Component {
         <div className="App">
           <Navbar />
           <Switch>
-          <Route path='/BlockApp' component={BlockApp} />
+            <Route path='/BlockApp' component={BlockApp} />
+            <Route path='/Blocks' component={Blocks} />
             <Route path='/Home' component={Home} />
             <Route path='/About' component={About} />
             <Route path='/Contact' component={Contact} />

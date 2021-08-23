@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Blocks from './Blocks';
 import blockchain from '../assets/blockchain.png';
+import { NavLink } from 'react-router-dom'
 
 class BlockApp extends Component {
     state = { walletInfo: {} };
@@ -16,16 +16,25 @@ class BlockApp extends Component {
 
         return (
             <div className='App'>
-                <img alt='blockchain' src={blockchain}></img>
+                
+                {/* <div>Wellcome!</div> */}
                 <br />
-                <div>Wellcome!</div>
+                <div>
+                    <nav className="nav-wrapper blue darken-9">
+                        <div>
+                            <ul className="right">
+                                <li><NavLink to="/Blocks">Blocks</NavLink></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <br />
+                <img alt='blockchain' src={blockchain}></img>
                 <br />
                 <div className='WalletInfo'>
                     <div>Adress: {address}</div>
                     <div>Balance: {balance}</div>
                 </div>
-                <br />
-                <Blocks />
             </div>
         );
     }
