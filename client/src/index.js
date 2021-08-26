@@ -4,7 +4,7 @@ import { Router, Route, Switch } from 'react-router-dom';
 // import history from './history';
 import './index.css';
 import App from './App';
-import Blocks from './components/Blocks';
+// import Blocks from './components/Blocks';
 import reportWebVitals from './reportWebVitals';
 // import { render } from 'react-dom';
 import { createBrowserHistory } from "history";
@@ -15,7 +15,7 @@ ReactDOM.render(
     <Router history={history}>
       <Switch>
         <Route exact path='/' component={App} />
-        <Route path='/' component={Blocks} />
+        {/* <Route path='/' component={Blocks} /> */}
       </Switch>
     </Router>,
   document.getElementById('root')
@@ -31,7 +31,4 @@ ReactDOM.render(
 //   document.getElementById('root')
 // );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
