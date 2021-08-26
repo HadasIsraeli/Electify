@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { FormGroup, FormControl, Button } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 // import history from '../history';
+import { withRouter } from "react-router-dom";
 
 class ConductTransaction extends Component {
     state = { recipient: '', amount: 0 };
@@ -25,7 +26,7 @@ class ConductTransaction extends Component {
         }).then(response => response.json())
             .then(json => {
                 alert(json.message || json.type);
-                // history.push('/transaction-pool');
+                this.props.history.push('/transaction-pool');
             });
     }
 
@@ -73,4 +74,4 @@ class ConductTransaction extends Component {
     }
 };
 
-export default ConductTransaction;
+export default withRouter(ConductTransaction);
