@@ -4,6 +4,7 @@ import Transaction from './Transaction';
 import { NavLink } from 'react-router-dom';
 // import history from '../history';
 
+const POLL_INERVAL_MS = 10000;
 class TransactionPool extends Component {
     state = { transactionPoolMap: {} };
 
@@ -16,10 +17,14 @@ class TransactionPool extends Component {
     componentDidMount() {
         this.fetchTransactionPoolMap();
 
-        // this.fetchPoolMapInterval = setInterval(
-        //     () => this.fetchTransactionPoolMap(),
-        //     POLL_INERVAL_MS
-        // );
+        this.fetchPoolMapInterval = setInterval(
+            () => this.fetchTransactionPoolMap(),
+            POLL_INERVAL_MS
+        );
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.fetchPoolMapInterval);
     }
 
     render() {
