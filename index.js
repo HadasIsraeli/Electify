@@ -20,7 +20,7 @@ const DEFAULT_PORT = 3000;
 const ROOT_NODE_ADDRESS = `http://localhost:${DEFAULT_PORT}`
 
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, 'client/public')));
+app.use(express.static(path.join(__dirname, 'client/dist')));
 
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
@@ -87,9 +87,9 @@ app.get('/api/wallet-info', (req, res) => {
     });
 });
 
-// app.get('*', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'client/public/index.html'));
-// });
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client/dist/index.html'));
+});
 
 const syncWithRootState = () => {
     request({ url: `${ROOT_NODE_ADDRESS}/api/blocks` }, (error, response, body) => {
