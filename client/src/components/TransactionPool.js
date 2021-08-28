@@ -64,7 +64,7 @@ class TransactionPool extends Component {
                     })
                 }
                 <hr />
-                <Button onClick={this.fetchMineTransactions}>Mine the Vote</Button>
+                <Button onClick={this.fetchMineTransactions}>send Vote</Button>
             </div>
         )
     }

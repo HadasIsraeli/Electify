@@ -9,7 +9,7 @@ const Home = (props) => {
     return (
         <div className="container home">
             {/* <h4 className="center">Home</h4> */}
-            <h1 className="center">Wellcome!</h1>
+            <h2 className="center">Wellcome!</h2>
             <h3 className="center">Today is ellection day!</h3>
             {/* <img src={BallotBox} alt="BallotBox" /> */}
             <img src={voting} alt="voting" />
