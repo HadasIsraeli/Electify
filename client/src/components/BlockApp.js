@@ -29,21 +29,21 @@ class BlockApp extends Component {
                     </nav>
                 </div>
                 <br />
-                <div>
+                {/* <div>
                     <nav className="nav-wrapper blue darken-9">
                         <div>
                             <ul className="right">
-                                <li><NavLink to='/conduct-transaction'>Conduct a Transaction</NavLink></li>
+                                <li><NavLink to='/conduct-transaction'>Conduct a Transaction/Vote</NavLink></li>
                             </ul>
                         </div>
                     </nav>
                 </div>
-                <br />
+                <br /> */}
                 <div>
                     <nav className="nav-wrapper blue darken-9">
                         <div>
                             <ul className="right">
-                                <li><NavLink to='/transaction-pool'>Transaction Pool</NavLink></li>
+                                <li><NavLink to='/transaction-pool'>Vote submitted</NavLink></li>
                             </ul>
                         </div>
                     </nav>

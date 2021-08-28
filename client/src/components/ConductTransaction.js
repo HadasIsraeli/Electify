@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { FormGroup, FormControl, Button } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 // import history from '../history';
 import { withRouter } from "react-router-dom";
 
@@ -35,7 +35,7 @@ class ConductTransaction extends Component {
 
         return (
             <div className='ConductTransaction'>
-                <div>
+                {/* <div>
                     <nav className="nav-wrapper blue darken-9">
                         <div className="container">
                             <ul className="right">
@@ -43,8 +43,8 @@ class ConductTransaction extends Component {
                             </ul>
                         </div>
                     </nav>
-                </div>
-                <h3>Conduct a Transaction</h3>
+                </div> */}
+                <h3>BallotBox</h3>
                 <FormGroup>
                     <FormControl
                         input='text'
@@ -58,16 +58,10 @@ class ConductTransaction extends Component {
                         input='number'
                         placeholder='amount'
                         value={this.state.amount}
-                        onChange={this.updateAmount}
-                    />
+                        onChange={this.updateAmount}/>
                 </FormGroup>
                 <div>
-                    <Button
-                        bsStyle="danger"
-                        onClick={this.conductTransaction}
-                    >
-                        Submit
-                    </Button>
+                    <Button onClick={this.conductTransaction}>Submit</Button>
                 </div>
             </div>
         )

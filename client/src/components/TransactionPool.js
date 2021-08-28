@@ -52,7 +52,7 @@ class TransactionPool extends Component {
                         </div>
                     </nav>
                 </div>
-                <h3>Transaction Pool</h3>
+                <h3>Vote Submitted</h3>
                 {
                     Object.values(this.state.transactionPoolMap).map(transaction => {
                         return (
@@ -64,7 +64,7 @@ class TransactionPool extends Component {
                     })
                 }
                 <hr />
-                <Button onClick={this.fetchMineTransactions}>Mine the Transactions</Button>
+                <Button onClick={this.fetchMineTransactions}>Mine the Vote</Button>
             </div>
         )
     }
