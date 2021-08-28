@@ -23,9 +23,9 @@
   },
   "scripts": {
     "start": "npm run build-client & node index.js",
-    "dev": "npm run start-redis && nodemon index.js",
-    "dev-all": "npm run dev-client & npm run start-redis && nodemon index.js",
-    "dev-peer": "cross-env GENERATE_PEER_PORT='true' nodemon index.js",
+    "dev": "npm run dev-client & npm run start-redis && nodemon index.js",
+    "dev-all": "npm run dev-client & npm run start-redis && cross-env ENV='development' nodemon index.js",
+    "dev-peer": "cross-env GENERATE_PEER_PORT='true' ENV='development' nodemon index.js",
     "build": "react-scripts build",
     "test": "jest --watchAll",
     "eject": "react-scripts eject",
