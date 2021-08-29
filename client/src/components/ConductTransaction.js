@@ -4,6 +4,39 @@ import { FormGroup, FormControl, Button } from 'react-bootstrap';
 // import history from '../history';
 import { withRouter } from "react-router-dom";
 
+function VoteCard() {
+    // const parties = [
+    //     { title: "Party1", description: "party1 description", number: "12" },
+    //     { title: "Party2", description: "party2 description", number: "123" },
+    //     { title: "Party3", description: "party3 description", number: "124" },
+    //     { title: "Party4", description: "party4 description", number: "125" },
+    //     { title: "Party5", description: "party5 description", number: "126" },
+    //   ];
+
+    return (
+        <div className="container__card">
+            <Card title="Party1" description="party1 description"/>
+            <Card title="Party2" description="party2 description"/>
+            <Card title="Party3" description="party3 description"/>
+            <Card title="Party4" description="party4 description"/>
+            <Card title="Party5" description="party5 description"/>
+        </div>
+    )
+}
+
+function Card(props) {
+    return (
+        <div className="card">
+            <div>
+                <h4>{props.title}</h4>
+                <p>{props.description}</p>
+                <h6>{props.info}</h6>
+            </div>
+            <button>choose party</button>
+        </div>
+    )
+}
+
 class ConductTransaction extends Component {
     state = { recipient: '', amount: 0 };
 
@@ -58,11 +91,12 @@ class ConductTransaction extends Component {
                         input='number'
                         placeholder='amount'
                         value={this.state.amount}
-                        onChange={this.updateAmount}/>
+                        onChange={this.updateAmount} />
                 </FormGroup>
                 <div>
                     <Button onClick={this.conductTransaction}>Submit</Button>
                 </div>
+                <VoteCard />
             </div>
         )
     }

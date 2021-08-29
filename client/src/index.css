@@ -45,3 +45,22 @@ code {
 .ConductTransaction, .TransactionPool {
   margin: 2%;
 }
+
+.card {
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(5, 12, 104, 0.25);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: transform 200ms ease-in;
+}
+
+.container__card{
+  color:teal;
+  gap: 5px;
+  display:flex;
+  flex-direction:row;
+}
+
