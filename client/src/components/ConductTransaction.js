@@ -6,19 +6,20 @@ import { withRouter } from "react-router-dom";
 
 function VoteCard() {
     const parties = [
-        { title: "Party1", description: "party1 description", number: "11" },
-        { title: "Party2", description: "party2 description", number: "22" },
-        { title: "Party3", description: "party3 description", number: "33" },
-        { title: "Party4", description: "party4 description", number: "44" },
-        { title: "Party5", description: "party5 description", number: "55" },
-      ];
+        { title: "Donald Trump", description: "Vote for me", number: "11" },
+        { title: "Barak Obama", description: "I'm will WIN", number: "22" },
+        { title: "Britney Spears", description: "Ops I did it again", number: "33" },
+        { title: "Benjamin Netanyahu", description: "Im gonna live forever", number: "44" },
+        { title: "Michael Jackson", description: "I'm bad", number: "55" },
+        { title: "Noa Killa", description: "Million dollers", number: "66" }
+    ];
 
     return (
         <Card className="container__card">
-      {parties.map((party) => (
-        <PartyCard key={party.number} title={party.title} description={party.description} number={party.number} />
-      ))}
-    </Card>
+            {parties.map((party) => (
+                <PartyCard key={party.number} title={party.title} description={party.description} number={party.number} />
+            ))}
+        </Card>
     )
 }
 
@@ -30,21 +31,28 @@ function PartyCard(props) {
                 <p>{props.description}</p>
                 <h6>{props.number}</h6>
             </Card>
-            <Button>choose party</Button>
+            {/* <Button>choose party</Button> */}
+            <Button onClick={() =>
+                chooseParty(props.title, props.number)}>choose party</Button>
         </div>
     )
 }
 
-function Card(props){
+function Card(props) {
     const classes = props.className + " card";
-    return(
+    return (
         <div className={classes}>{props.children}</div>
     )
 }
 
+const chooseParty = (title, number) => {
+    // const { recipient, amount } = this.state;
+    // onChange = { this.updateAmount }
+    console.log('onClick PARTY ' + title +' '+ number);
+}
+
 class ConductTransaction extends Component {
     state = { recipient: '', amount: 0 };
-
 
     updateRecipient = event => {
         this.setState({ recipient: event.target.value });
@@ -56,16 +64,17 @@ class ConductTransaction extends Component {
 
     conductTransaction = () => {
         const { recipient, amount } = this.state;
-
-        fetch(`${document.location.origin}/api/transact`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ recipient, amount })
-        }).then(response => response.json())
-            .then(json => {
-                alert(json.message || json.type);
-                this.props.history.push('/transaction-pool');
-            });
+        if (amount !== 0 || recipient !== '') {
+            fetch(`${document.location.origin}/api/transact`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ recipient, amount })
+            }).then(response => response.json())
+                .then(json => {
+                    alert(json.message || json.type);
+                    this.props.history.push('/transaction-pool');
+                });
+        }
     }
 
     render() {
@@ -96,12 +105,13 @@ class ConductTransaction extends Component {
                         input='number'
                         placeholder='amount'
                         value={this.state.amount}
-                        onChange={this.updateAmount} />
+                        onChange={this.updateAmount}
+                    />
                 </FormGroup>
                 <div>
                     <Button onClick={this.conductTransaction}>Submit</Button>
                 </div>
-                <br/>
+                <br />
                 <VoteCard />
             </div>
         )
