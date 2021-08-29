@@ -48,7 +48,7 @@ code {
 
 .card {
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(5, 12, 104, 0.25);
+  box-shadow: 0 2px 8px rgb(185, 216, 233);
   border-radius: 12px;
   display: flex;
   flex-direction: column;
@@ -59,7 +59,11 @@ code {
 
 .container__card{
   color:teal;
-  gap: 5px;
+  background-color:transparent;
+  box-shadow: 0 2px 8px rgb(137, 201, 238);
+  padding:1px;
+  gap: 30px;
+  text-align:center;
   display:flex;
   flex-direction:row;
 }
