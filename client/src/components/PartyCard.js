@@ -1,28 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button } from 'react-bootstrap';
 import Card from "./Card";
 
 const PartyCard = (props) => {
-    const chooseParty = (title, number) => {
-        setRecipient(title);
-        SetAmount(number);
-        console.log('onClick PARTY ' + title + ' ' + number);
-    }
-
-    const [recipient, setRecipient] = useState('');
-    const [amount, SetAmount] = useState(0);
-    console.log('recipient', recipient);
-    console.log('amount', amount);
+    const recipient = props.title;
+    const amount = props.number;
 
     return (
         <div className="card">
             <Card>
-                <h4>{props.title}</h4>
+                <h4>{recipient}</h4>
                 <p>{props.description}</p>
-                <h6>{props.number}</h6>
+                <h6>{amount}</h6>
             </Card>
-            <Button onClick={() =>
-                chooseParty(props.title, props.number)}>choose party</Button>
+            <Button onClick={() => props.chooseParty(recipient, amount)}>choose party</Button>
         </div>
     )
 }

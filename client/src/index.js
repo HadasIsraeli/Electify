@@ -8,14 +8,14 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 // import { render } from 'react-dom';
 import { createBrowserHistory } from "history";
-import LoginApp from './LoginApp';
+// import LoginApp from './LoginApp';
 
 const history = createBrowserHistory();
 
 ReactDOM.render(
   <Router history={history}>
     <Switch>
-      <Route path='/' component={LoginApp} />
+      {/* <Route path='/' component={LoginApp} /> */}
       <Route exact path='/' component={App} />
     </Switch>
   </Router>,

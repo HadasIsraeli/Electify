@@ -16,8 +16,6 @@ class BlockApp extends Component {
 
         return (
             <div className='App'>
-                
-                {/* <div>Wellcome!</div> */}
                 <br />
                 <div>
                     <nav className="nav-wrapper blue darken-9">
