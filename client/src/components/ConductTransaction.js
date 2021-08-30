@@ -11,16 +11,23 @@ class ConductTransaction extends Component {
         amount: 0
     };
 
-    updateRecipient = event => {
-        this.setState({ recipient: event.target.value });
+    chooseParty = (title, number) => {
+        this.updateRecipient(title);
+        this.updateAmount(number);
+        console.log('onClick PARTY ' + title + ' ' + number);
     }
 
-    updateAmount = event => {
-        this.setState({ amount: Number(event.target.value) });
+    updateRecipient = value => {
+        this.setState({ recipient: value });
+    }
+
+    updateAmount = value => {
+        this.setState({ amount: Number(value) });
     }
 
     conductTransaction = () => {
         const { recipient, amount } = this.state;
+        console.log(this.state.recipient + ' ' + this.state.amount);
         if (amount !== 0 || recipient !== '') {
             fetch(`${document.location.origin}/api/transact`, {
                 method: 'POST',
@@ -54,7 +61,7 @@ class ConductTransaction extends Component {
                         input='text'
                         placeholder='Party Name'
                         value={this.state.recipient}
-                        onChange={this.updateRecipient}
+                        onChange={(event) => this.updateRecipient(event.target.value)}
                     />
                 </FormGroup>
                 <FormGroup>
@@ -62,14 +69,14 @@ class ConductTransaction extends Component {
                         input='number'
                         placeholder='Party number'
                         value={this.state.amount}
-                        onChange={this.updateAmount}
+                        onChange={(event) => this.updateAmount(event.target.value)}
                     />
                 </FormGroup>
                 <div>
                     <Button onClick={this.conductTransaction}>Submit</Button>
                 </div>
                 <br />
-                <VoteCard />
+                <VoteCard chooseParty={this.chooseParty} />
             </div>
         )
     }

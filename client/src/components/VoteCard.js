@@ -12,19 +12,19 @@ const VoteCard = (props) => {
         { title: "Noa Killa", description: "Million dollers", number: "66" }
     ];
 
-    const chooseParty = (title, number) => {
-        setRecipient(title);
-        SetAmount(number);
-        console.log('onClick PARTY ' + title + ' ' + number);
-    }
+    // const chooseParty = (title, number) => {
+    //     setRecipient(title);
+    //     SetAmount(number);
+    //     console.log('onClick PARTY ' + title + ' ' + number);
+    // }
 
-    const [recipient, setRecipient] = useState('');
-    const [amount, SetAmount] = useState(0);
+    // const [recipient, setRecipient] = useState('');
+    // const [amount, SetAmount] = useState(0);
 
     return (
         <Card className="container__card">
             {parties.map((party) => (
-                <PartyCard chooseParty={chooseParty} key={party.number} title={party.title} description={party.description} number={party.number} />
+                <PartyCard chooseParty={props.chooseParty} key={party.number} title={party.title} description={party.description} number={party.number} />
             ))}
         </Card>
     )
