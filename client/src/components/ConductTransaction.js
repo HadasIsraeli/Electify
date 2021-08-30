@@ -3,56 +3,13 @@ import { FormGroup, FormControl, Button } from 'react-bootstrap';
 // import { NavLink } from 'react-router-dom';
 // import history from '../history';
 import { withRouter } from "react-router-dom";
-
-function VoteCard() {
-    const parties = [
-        { title: "Donald Trump", description: "Vote for me", number: "11" },
-        { title: "Barak Obama", description: "I'm will WIN", number: "22" },
-        { title: "Britney Spears", description: "Ops I did it again", number: "33" },
-        { title: "Benjamin Netanyahu", description: "Im gonna live forever", number: "44" },
-        { title: "Michael Jackson", description: "I'm bad", number: "55" },
-        { title: "Noa Killa", description: "Million dollers", number: "66" }
-    ];
-
-    return (
-        <Card className="container__card">
-            {parties.map((party) => (
-                <PartyCard key={party.number} title={party.title} description={party.description} number={party.number} />
-            ))}
-        </Card>
-    )
-}
-
-function PartyCard(props) {
-    return (
-        <div className="card">
-            <Card>
-                <h4>{props.title}</h4>
-                <p>{props.description}</p>
-                <h6>{props.number}</h6>
-            </Card>
-            {/* <Button>choose party</Button> */}
-            <Button onClick={() =>
-                chooseParty(props.title, props.number)}>choose party</Button>
-        </div>
-    )
-}
-
-function Card(props) {
-    const classes = props.className + " card";
-    return (
-        <div className={classes}>{props.children}</div>
-    )
-}
-
-const chooseParty = (title, number) => {
-    // const { recipient, amount } = this.state;
-    // onChange = { this.updateAmount }
-    console.log('onClick PARTY ' + title +' '+ number);
-}
+import VoteCard from './VoteCard';
 
 class ConductTransaction extends Component {
-    state = { recipient: '', amount: 0 };
+    state = {
+        recipient: '',
+        amount: 0
+    };
 
     updateRecipient = event => {
         this.setState({ recipient: event.target.value });
@@ -103,7 +60,7 @@ class ConductTransaction extends Component {
                 <FormGroup>
                     <FormControl
                         input='number'
-                        placeholder='amount'
+                        placeholder='Party number'
                         value={this.state.amount}
                         onChange={this.updateAmount}
                     />
