@@ -27,26 +27,6 @@ class BlockApp extends Component {
                     </nav>
                 </div>
                 <br />
-                {/* <div>
-                    <nav className="nav-wrapper blue darken-9">
-                        <div>
-                            <ul className="right">
-                                <li><NavLink to='/conduct-transaction'>Conduct a Transaction/Vote</NavLink></li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-                <br /> */}
-                {/* <div>
-                    <nav className="nav-wrapper blue darken-9">
-                        <div>
-                            <ul className="right">
-                                <li><NavLink to='/transaction-pool'>Vote Submitted</NavLink></li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div> */}
-                <br />
                 <img alt='blockchain' src={blockchain}></img>
                 <br />
                 <div className='WalletInfo'>

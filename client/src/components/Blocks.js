@@ -21,16 +21,16 @@ class Blocks extends Component {
     }
 
     render() {
-
         console.log('this.state', this.state);
 
         return (
-            <div>
+            <div className='App'>
+                <br />
                 <div>
                     <nav className="nav-wrapper blue darken-9">
-                        <div className="container">
-                            <ul className="right">
-                                <li><NavLink to="/BlockApp">Blockchain/exit</NavLink></li>
+                        <div>
+                            <ul className="center">
+                                <li><NavLink to="/BlockApp">Exit</NavLink></li>
                             </ul>
                         </div>
                     </nav>

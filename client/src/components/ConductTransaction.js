@@ -27,8 +27,8 @@ class ConductTransaction extends Component {
 
     conductTransaction = () => {
         const { recipient, amount } = this.state;
-        console.log(this.state.recipient + ' ' + this.state.amount);
-        if (amount !== 0 || recipient !== '') {
+        if ((amount === 11 && recipient === 'Yair Lapid') || (amount === 22 && recipient === 'Avigdor Lieberman') || (amount === 33 && recipient === "Gideon Sa'ar") || (amount === 44 && recipient === 'Benjamin Netanyahu') || (amount === 55 && recipient === 'Naftali Bennett') || (amount === 66 && recipient === 'Merav Michaeli')) {
+            console.log('recipient:'+ recipient + ' amount:' + amount);
             fetch(`${document.location.origin}/api/transact`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -42,19 +42,9 @@ class ConductTransaction extends Component {
     }
 
     render() {
-        // console.log('this.state', this.state);
 
         return (
             <div className='ConductTransaction'>
-                {/* <div>
-                    <nav className="nav-wrapper blue darken-9">
-                        <div className="container">
-                            <ul className="right">
-                                <li><NavLink to="/BlockApp">Blockchain</NavLink></li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div> */}
                 <h3>BallotBox</h3>
                 <FormGroup>
                     <FormControl

@@ -43,15 +43,6 @@ class TransactionPool extends Component {
     render() {
         return (
             <div className='TransactionPool'>
-                <div>
-                    <nav className="nav-wrapper blue darken-9">
-                        <div className="container">
-                            <ul className="right">
-                                <li><NavLink to="/BlockApp">Blockchain</NavLink></li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
                 <h3>Vote Submitted</h3>
                 {
                     Object.values(this.state.transactionPoolMap).map(transaction => {
