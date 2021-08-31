@@ -9,6 +9,7 @@ import BlockApp from './components/BlockApp';
 import Blocks from './components/Blocks';
 import ConductTransaction from './components/ConductTransaction';
 import TransactionPool from './components/TransactionPool';
+import CountVotes from './components/CountVotes';
 
 class App extends Component {
   render() {
@@ -21,6 +22,7 @@ class App extends Component {
             <Route path='/Blocks' component={Blocks} />
             <Route path='/conduct-transaction' component={ConductTransaction} />
             <Route path='/transaction-pool' component={TransactionPool} />
+            <Route path='/CountVotes' component={CountVotes} />
             <Route path='/Home' component={Home} />
             <Route path='/About' component={About} />
             <Route path='/Contact' component={Contact} />
