@@ -27,7 +27,7 @@ class ConductTransaction extends Component {
 
     conductTransaction = () => {
         const { recipient, amount } = this.state;
-        if ((amount === 11 && recipient === 'Yair Lapid') || (amount === 22 && recipient === 'Avigdor Lieberman') || (amount === 33 && recipient === "Gideon Sa'ar") || (amount === 44 && recipient === 'Benjamin Netanyahu') || (amount === 55 && recipient === 'Naftali Bennett') || (amount === 66 && recipient === 'Merav Michaeli')) {
+        if ((amount === 1 && recipient === 'Yair Lapid') || (amount === 2 && recipient === 'Avigdor Lieberman') || (amount === 3 && recipient === "Gideon Sa'ar") || (amount === 4 && recipient === 'Benjamin Netanyahu') || (amount === 5 && recipient === 'Naftali Bennett') || (amount === 6 && recipient === 'Merav Michaeli')) {
             console.log('recipient:'+ recipient + ' amount:' + amount);
             fetch(`${document.location.origin}/api/transact`, {
                 method: 'POST',

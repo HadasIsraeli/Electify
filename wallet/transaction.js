@@ -1,6 +1,7 @@
 const uuid = require('uuid/v1');
 const { verifySignature } = require('../utility');
 const { REWARD_INPUT, MINING_REWARD } = require('../config');
+
 class Transaction {
     constructor({ senderWallet, recipient, amount, outputMap, input }) {
         this.id = uuid();
@@ -13,7 +14,7 @@ class Transaction {
         outputMap[recipient] = amount;
         console.log(recipient +' '+ amount + "  outputMap[recipient]=amount");
         outputMap[senderWallet.publicKey] = senderWallet.balance - amount;
-
+        
         return outputMap;
     }
 

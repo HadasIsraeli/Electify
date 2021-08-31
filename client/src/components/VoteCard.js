@@ -4,12 +4,12 @@ import PartyCard from './PartyCard';
 
 const VoteCard = (props) => {
     const parties = [
-        { title: "Yair Lapid", description: "Yesh Atid", number: "11" },
-        { title: "Avigdor Lieberman", description: "Yisrael Beiteinu", number: "22" },
-        { title: "Gideon Sa'ar", description: "New Hope", number: "33" },
-        { title: "Benjamin Netanyahu", description: "Likud", number: "44" },
-        { title: "Naftali Bennett", description: "Yamina", number: "55" },
-        { title: "Merav Michaeli", description: "Israeli Labor Party", number: "66" }
+        { title: "Yair Lapid", description: "Yesh Atid", number: "1" },
+        { title: "Avigdor Lieberman", description: "Yisrael Beiteinu", number: "2" },
+        { title: "Gideon Sa'ar", description: "New Hope", number: "3" },
+        { title: "Benjamin Netanyahu", description: "Likud", number: "4" },
+        { title: "Naftali Bennett", description: "Yamina", number: "5" },
+        { title: "Merav Michaeli", description: "Israeli Labor Party", number: "6" }
     ];
 
     // const chooseParty = (title, number) => {

@@ -1,25 +1,26 @@
 import React, { Component } from 'react';
-const Transaction = require('./transaction');
 
 
 class CountVotes extends Component {
+    // state = { blocks: [] };
 
-    fetchApiBlocks = () => {
-        var requestOptions = {
-            method: 'GET',
-            redirect: 'follow'
-        };
+    // fetchApiBlocks = () => {
+    //     var requestOptions = {
+    //         method: 'GET',
+    //         redirect: 'follow'
+    //     };
 
-        fetch(`${document.location.origin}/api/blocks`, requestOptions)
-            .then(response => response.text())
-            .then(result => console.log(result))
-            .catch(error => console.log('error', error));
-    }
+    //     fetch("http://localhost:3000/api/blocks", requestOptions)
+    //         .then(response => response.text())
+    //         .then(result => console.log(result))
+    //         .catch(error => console.log('error', error));
+    // }
 
     render() {
         return (
             <div className="App">
                 <h2>Election Results</h2>
+                <buton></buton>
                 <h3></h3>
 
             </div>
