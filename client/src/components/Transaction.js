@@ -2,7 +2,7 @@ import React from 'react';
 
 const Transaction = ({ transaction }) => {
     const { input, outputMap } = transaction;
-    console.log(transaction.amount + ' test' );
+    console.log(transaction.amount + ' amount test' );
     const recipients = Object.keys(outputMap);
 
     return (

@@ -4,12 +4,12 @@ import PartyCard from './PartyCard';
 
 const VoteCard = (props) => {
     const parties = [
-        { title: "Donald Trump", description: "Vote for me", number: "11" },
-        { title: "Barak Obama", description: "I'm will WIN", number: "22" },
-        { title: "Britney Spears", description: "Ops I did it again", number: "33" },
-        { title: "Benjamin Netanyahu", description: "Im gonna live forever", number: "44" },
-        { title: "Michael Jackson", description: "I'm bad", number: "55" },
-        { title: "Noa Killa", description: "Million dollers", number: "66" }
+        { title: "Yair Lapid", description: "Yesh Atid", number: "11" },
+        { title: "Avigdor Lieberman", description: "Yisrael Beiteinu", number: "22" },
+        { title: "Gideon Sa'ar", description: "New Hope", number: "33" },
+        { title: "Benjamin Netanyahu", description: "Likud", number: "44" },
+        { title: "Naftali Bennett", description: "Yamina", number: "55" },
+        { title: "Merav Michaeli", description: "Israeli Labor Party", number: "66" }
     ];
 
     // const chooseParty = (title, number) => {

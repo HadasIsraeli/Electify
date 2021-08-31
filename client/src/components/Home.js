@@ -5,10 +5,11 @@ const Home = (props) => {
     
     return (
         <div className="container home">
-            <h2 className="center">Wellcome!</h2>
-            <h3 className="center">Today is ellection day!</h3>
+            <h2 className="center">Wellcome to Ellectify!</h2>
+            <h3 className="center">A Smart Ellections BallotBox Webapp using Blockchain</h3>
             <img src={voting} alt="voting" />
-            <h6>Hadas Israeli, Inbar Israeli, Ohad Edry</h6>
+            <h4>Represented by:</h4>
+            <h4>Hadas Israeli, Inbar Israeli, Ohad Edry</h4>
         </div>
     )
 }
