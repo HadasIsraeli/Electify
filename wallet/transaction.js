@@ -12,7 +12,7 @@ class Transaction {
     createOutputMap({ senderWallet, recipient, amount }) {
         const outputMap = {};
         outputMap[recipient] = amount;
-        console.log(recipient +' '+ amount + "  outputMap[recipient]=amount");
+        // console.log(recipient +' '+ amount + "  outputMap[recipient]=amount");
         outputMap[senderWallet.publicKey] = senderWallet.balance - amount;
         
         return outputMap;
