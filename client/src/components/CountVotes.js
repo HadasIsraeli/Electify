@@ -1,11 +1,13 @@
-import React, { Component ,useState} from 'react';
+import React, { Component, useState } from 'react';
 // import { NavLink } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 
 class CountVotes extends Component {
     state = {
         partyName: [],
-        loading: true
+        loading: true,
+        countVotes: [],
+        winningParty: " "
     };
 
 
@@ -22,54 +24,35 @@ class CountVotes extends Component {
         for (let i = 1; i < allBlocks.length; i++) {
             data[i] = JSON.stringify(allBlocks[i].data[0].outputMap);
             // console.log(data[i]);
-            if (data[i].search("Yair Lapid") > -1) {
-                console.log('Yair Lapid');
-            }
-            if (data[i].search("Avigdor Lieberman") > -1) {
-                console.log('Avigdor Lieberman');
-            }
-            if (data[i].search("Gideon Sa'ar") > -1) {
-                console.log("Gideon Sa'ar");
-            }
-            if (data[i].search("Benjamin Netanyahu") > -1) {
-                console.log('Benjamin Netanyahu');
-            }
-            if (data[i].search("Naftali Bennett") > -1) {
-                console.log('Naftali Bennett');
-            }
-            if (data[i].search("Merav Michaeli") > -1) {
-                console.log('Merav Michaeli');
-            }
         }
 
         this.setState({ partyName: data, loading: false });
     }
 
-    voteCount() {
-        const parties = ["Yair Lapid", "Avigdor Lieberman", "Gideon Sa'ar",
-            "Benjamin Netanyahu", "Naftali Bennett", "Merav Michaeli"];
+    voteCount = () => {
+        const parties = ["Yair Lapid", "Avigdor Lieberman", "Gideon Sa'ar", "Benjamin Netanyahu", "Naftali Bennett", "Merav Michaeli"];
+        const votes = this.state.partyName;
+        const count = [0, 0, 0, 0, 0, 0];
 
-        console.log(parties[0] + ' parties');
-        console.log(this.state.partyName + ' partyName');
-        console.log(this.state.partyName.length + ' partyName.length');
+        // console.log(parties + ' parties');
+        // console.log(votes + ' votes');
+        // console.log(votes.length + ' votes.length');
 
+        for (let i = 1; i < votes.length; i++) {
+            for (let j = 0; j < parties.length; j++) {
+                if (votes[i].search(parties[j]) > -1) {
+                    count[j]++;
+                    // console.log(parties[j] + ' voted party ' + count[j]);
+                }
+            }
+        }
+
+        let index = count.indexOf(Math.max(...count));
+        const winning = parties[index];
+        // console.log(index + ' winning: ' + winning);
+        // console.log(count + ' count');
+        this.setState({ countVotes: count, winningParty: winning });
     }
-
-
-    // fetchApiBlocks = (cb) => {
-    //     var url = `${document.location.origin}/api/blocks`;
-
-    //     const fetchPromise = fetch(url);
-
-    //     fetchPromise.then(response => {
-    //         return response.json();
-    //     }).then(allBlocks => {
-    //         const data = allBlocks.map(Blocks =>
-    //             Blocks.data[0]);
-
-    //         console.log(data);
-    //     });
-    // }
 
 
     render() {
@@ -86,20 +69,22 @@ class CountVotes extends Component {
                 </div> */}
                 <h2>Election Results</h2>
                 {
-                    this.state.loading ? (<div>Loading...</div>) : (<div>{this.state.partyName}</div>)
+                    this.state.loading ? (<div>Loading...</div>) : (
+                        <div>
+                            {/* {this.state.partyName}
+                            <br /> */}
+                            {this.state.winningParty}
+                            <br />
+                            {this.state.countVotes}
+                        </div>
+                    )
                 }
                 <hr />
-                <Button onClick={this.voteCount(this.state.partyName)}>Count Votes</Button>
+                <Button onClick={
+                    this.voteCount
+                }>Count Votes</Button>
                 <br />
             </div>
-
-
-            // /*<div className = "App" onLoad = { this.fetchApiBlocks() } >
-            //         <h2>Election Results</h2>
-            //     {/* <button onClick={
-            //         this.fetchApiBlocks((data) => console.log({data}))
-            //         }>Count Votes</button> */}
-            // </div >*/
         );
     }
 }
