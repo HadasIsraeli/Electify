@@ -12,7 +12,7 @@ class BlockApp extends Component {
     }
 
     render() {
-        const { address, balance } = this.state.walletInfo;
+        // const { address, balance } = this.state.walletInfo;
 
         return (
             <div className='App'>
@@ -31,7 +31,7 @@ class BlockApp extends Component {
                     <nav className="nav-wrapper blue darken-9">
                         <div>
                             <ul className="right">
-                                <li><NavLink to="/CountVotes">CountVotes</NavLink></li>
+                                <li><NavLink to="/CountVotes">Count Votes</NavLink></li>
                             </ul>
                         </div>
                     </nav>
@@ -39,10 +39,10 @@ class BlockApp extends Component {
                 <br />
                 <img alt='blockchain' src={blockchain}></img>
                 <br />
-                <div className='WalletInfo'>
+                {/* <div className='WalletInfo'>
                     <div>Adress: {address}</div>
                     <div>Balance: {balance}</div>
-                </div>
+                </div> */}
             </div>
         );
     }

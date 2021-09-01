@@ -12,15 +12,6 @@ const VoteCard = (props) => {
         { title: "Merav Michaeli", description: "Israeli Labor Party", number: "6" }
     ];
 
-    // const chooseParty = (title, number) => {
-    //     setRecipient(title);
-    //     SetAmount(number);
-    //     console.log('onClick PARTY ' + title + ' ' + number);
-    // }
-
-    // const [recipient, setRecipient] = useState('');
-    // const [amount, SetAmount] = useState(0);
-
     return (
         <Card className="container__card">
             {parties.map((party) => (
