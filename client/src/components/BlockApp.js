@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import blockchain from '../assets/blockchain.png';
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
 
 class BlockApp extends Component {
     state = { walletInfo: {} };
