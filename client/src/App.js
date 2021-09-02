@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Navbar from './components/Navbar';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './components/Home';
-import About from './components/About';
 import Contact from './components/Contact';
 import Post from './components/Post';
 import BlockApp from './components/BlockApp';
@@ -24,7 +23,6 @@ class App extends Component {
             <Route path='/transaction-pool' component={TransactionPool} />
             <Route path='/CountVotes' component={CountVotes} />
             <Route path='/Home' component={Home} />
-            <Route path='/About' component={About} />
             <Route path='/Contact' component={Contact} />
             <Route path="/:post_id" component={Post} />
           </Switch>
