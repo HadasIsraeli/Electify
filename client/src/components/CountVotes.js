@@ -57,9 +57,9 @@ class CountVotes extends Component {
     // }
 
     render() {
-        if (this.state.loading) {
-            return <div>loading...</div>;
-        }
+        // if (this.state.loading) {
+        //     return <div>loading...</div>;
+        // }
 
         return (
             <div className="App">

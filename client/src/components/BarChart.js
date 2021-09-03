@@ -1,14 +1,13 @@
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
-import { Button } from 'react-bootstrap';
 
 const BarChart = (props) => {
 
-    state = {
-        countVotes = props.countVotes
-    }
 
-    console.log(this.state.countVotes);
+    const countVotes = props.countVotes
+
+
+    console.log(countVotes);
 
     const data = {
         labels: ["Yair Lapid, Yesh Atid", "Avigdor Lieberman, Yisrael Beiteinu", "Gideon Sa'ar, New Hope",
