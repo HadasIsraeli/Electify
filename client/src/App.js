@@ -9,6 +9,7 @@ import Blocks from './components/Blocks';
 import ConductTransaction from './components/ConductTransaction';
 import TransactionPool from './components/TransactionPool';
 import CountVotes from './components/CountVotes';
+import BarChart from './components/BarChart';
 
 class App extends Component {
   render() {
@@ -17,14 +18,15 @@ class App extends Component {
         <div className="App">
           <Navbar />
           <Switch>
-            <Route path='/BlockApp' component={BlockApp} />
-            <Route path='/Blocks' component={Blocks} />
-            <Route path='/conduct-transaction' component={ConductTransaction} />
-            <Route path='/transaction-pool' component={TransactionPool} />
-            <Route path='/CountVotes' component={CountVotes} />
-            <Route path='/Home' component={Home} />
-            <Route path='/Contact' component={Contact} />
-            <Route path="/:post_id" component={Post} />
+            <Route exact path='/BlockApp' component={BlockApp} />
+            <Route exact path='/Blocks' component={Blocks} />
+            <Route exact path='/conduct-transaction' component={ConductTransaction} />
+            <Route exact path='/transaction-pool' component={TransactionPool} />
+            <Route exact path='/CountVotes' component={CountVotes} />
+            <Route exact path='/BarChart' component={BarChart} />
+            <Route exact path='/Home' component={Home} />
+            <Route exact path='/Contact' component={Contact} />
+            <Route exact path="/:post_id" component={Post} />
           </Switch>
         </div>
       </BrowserRouter>
