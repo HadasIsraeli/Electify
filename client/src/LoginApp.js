@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import LoginForm from './components/LoginForm';
 import { Button } from 'react-bootstrap';
+import { withRouter } from "react-router-dom";
 import App from './App';
 
 function LoginApp() {
@@ -8,6 +9,11 @@ function LoginApp() {
         id: "12345",
         password: "admin12345"
     }
+     
+    // const basicUser={
+    //     id: "12345",
+    //     password: "basic12345"
+    // }
 
     const [user, setUser] = useState({ name: "", id: "" });
     const [error, SetError] = useState("");
@@ -21,6 +27,7 @@ function LoginApp() {
                 name: details.name,
                 id: details.id
             });
+            this.props.history.push('/');
         }
         else {
             console.log('Details do not match!');
@@ -47,4 +54,4 @@ function LoginApp() {
     );
 }
 
-export default LoginApp;
+export default withRouter(LoginApp);

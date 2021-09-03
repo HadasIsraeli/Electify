@@ -25,7 +25,7 @@ class Blocks extends Component {
         return (
             <div className='App'>
                 <br />
-                <div>
+                {/* <div>
                     <nav className="nav-wrapper blue darken-9">
                         <div>
                             <ul className="center">
@@ -33,8 +33,9 @@ class Blocks extends Component {
                             </ul>
                         </div>
                     </nav>
-                </div>
-                <h3>Blocks</h3>
+                </div> */}
+                <h3>Votes commited</h3>
+                <h5>Blocks chain</h5>
                 <div>
                     {
                         [...Array(Math.ceil(this.state.blocksLength / 5)).keys()].map(key => {

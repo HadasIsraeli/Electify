@@ -20,7 +20,8 @@ class TransactionPool extends Component {
             .then(response => {
                 if (response.status === 200) {
                     alert('success');
-                    this.props.history.push('/blocks');
+                    // this.props.history.push('/blocks');
+                    this.props.history.push('/');
                 } else {
                     alert('The mine-transactions block request did not complete.');
                 }

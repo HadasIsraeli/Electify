@@ -22,7 +22,7 @@ class App extends Component {
             <Route exact path='/transaction-pool' component={TransactionPool} />
             <Route exact path='/CountVotes' component={CountVotes} />
             <Route exact path='/BarChart' component={BarChart} />
-            <Route exact path='/Home' component={Home} />
+            <Route exact path='/' component={Home} />
           </Switch>
         </div>
       </BrowserRouter>
