@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import Navbar from './components/Navbar';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './components/Home';
-import Contact from './components/Contact';
-import Post from './components/Post';
 import BlockApp from './components/BlockApp';
 import Blocks from './components/Blocks';
 import ConductTransaction from './components/ConductTransaction';
@@ -25,8 +23,6 @@ class App extends Component {
             <Route exact path='/CountVotes' component={CountVotes} />
             <Route exact path='/BarChart' component={BarChart} />
             <Route exact path='/Home' component={Home} />
-            <Route exact path='/Contact' component={Contact} />
-            <Route exact path="/:post_id" component={Post} />
           </Switch>
         </div>
       </BrowserRouter>

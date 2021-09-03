@@ -22,6 +22,11 @@ code {
   height: 250px;
 }
 
+.img{
+  width: 250px;
+  height: 250px;
+}
+
 .App{
   display: flex;
   flex-direction: column;

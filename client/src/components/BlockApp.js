@@ -31,13 +31,13 @@ class BlockApp extends Component {
                     <nav className="nav-wrapper blue darken-9">
                         <div>
                             <ul className="right">
-                                <li><NavLink to="/CountVotes">Count Votes</NavLink></li>
+                                <li><NavLink to="/CountVotes">Election Results</NavLink></li>
                             </ul>
                         </div>
                     </nav>
                 </div>
                 <br />
-                <img alt='blockchain' src={blockchain}></img>
+                <img alt='blockchain' src={blockchain} className='img'></img>
                 <br />
                 {/* <div className='WalletInfo'>
                     <div>Adress: {address}</div>

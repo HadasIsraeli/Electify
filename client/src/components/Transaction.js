@@ -2,12 +2,9 @@ import React from 'react';
 
 const Transaction = ({ transaction }) => {
     const { input, outputMap } = transaction;
-    // console.log(Object.keys(outputMap) + ' outputMap test' );
-    // console.log(transaction.id + ' transaction.id');
     const recipients = Object.keys(outputMap);
 
     return (
-
         <div className='Transaction'>
             <div>From: {`${input.address.substring(0, 20)}...`} | Balance: {input.amount}</div>
             {

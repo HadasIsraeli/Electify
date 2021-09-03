@@ -7,9 +7,7 @@ const Navbar = () => {
             <div className="container">
                 <Link className="brand-logo" to="/Home">Electify</Link>
                 <ul className="right">
-                    <li><NavLink to="/Contact">Party List</NavLink></li>
                     <li><NavLink to='/conduct-transaction'>Vote</NavLink></li>
-                    {/* <li><NavLink to='/transaction-pool'>Vote Submitted</NavLink></li> */}
                     <li><NavLink to="/BlockApp">Blockchain</NavLink></li>
                 </ul>
             </div>

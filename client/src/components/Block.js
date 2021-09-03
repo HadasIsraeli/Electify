@@ -39,10 +39,9 @@ class Block extends Component {
     }
 
     render() {
-        console.log('this.displayTransaction', this.displayTransaction);
+        // console.log('this.displayTransaction', this.displayTransaction);
 
         const { timestamp, hash } = this.props.block;
-
         const hashDisplay = `${hash.substring(0, 15)}...`;
 
         return (

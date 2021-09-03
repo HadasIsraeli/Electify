@@ -2,20 +2,15 @@ import React from 'react';
 import { Bar } from 'react-chartjs-2';
 
 const BarChart = (props) => {
-
-
-    const countVotes = props.countVotes
-
-
-    console.log(countVotes);
+    const parties = props.parties;
+    const countVotes = props.countVotes;
 
     const data = {
-        labels: ["Yair Lapid, Yesh Atid", "Avigdor Lieberman, Yisrael Beiteinu", "Gideon Sa'ar, New Hope",
-            "Benjamin Netanyahu, Likud", "Naftali Bennett, Yamina", "Merav Michaeli, Israeli Labor Party"],
+        labels: parties,
         datasets: [
             {
                 label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
+                data: countVotes,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
@@ -52,7 +47,7 @@ const BarChart = (props) => {
     return (
         <>
             <div className='header'>
-                <h1 className='title'> Vote Status Chart</h1>
+                <h3 className='title'>Election Results Status Chart</h3>
             </div>
             <div className='barchart'>
                 <Bar
