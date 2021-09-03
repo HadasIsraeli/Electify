@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import BarChart from './BarChart';
 
 class CountVotes extends Component {
     state = {
@@ -9,8 +10,7 @@ class CountVotes extends Component {
         countVotes: [],
         winningParty: " ",
         parties: ["Yair Lapid, Yesh Atid", "Avigdor Lieberman, Yisrael Beiteinu", "Gideon Sa'ar, New Hope",
-            "Benjamin Netanyahu, Likud", "Naftali Bennett, Yamina", "Merav Michaeli, Israeli Labor Party"],
-        // chartData: {}
+            "Benjamin Netanyahu, Likud", "Naftali Bennett, Yamina", "Merav Michaeli, Israeli Labor Party"]
     };
 
 
@@ -26,13 +26,12 @@ class CountVotes extends Component {
             data[i] = JSON.stringify(allBlocks[i].data[0].outputMap);
         }
 
-        // this.getChartData();
-
         this.setState({ votedPartyName: data, loading: false });
     }
 
     voteCount = () => {
-        const parties = ["Yair Lapid", "Avigdor Lieberman", "Gideon Sa'ar", "Benjamin Netanyahu", "Naftali Bennett", "Merav Michaeli"];
+        const parties = ["Yair Lapid", "Avigdor Lieberman", "Gideon Sa'ar",
+            "Benjamin Netanyahu", "Naftali Bennett", "Merav Michaeli"];
         const votes = this.state.votedPartyName;
         const count = [0, 0, 0, 0, 0, 0];
 
@@ -43,51 +42,32 @@ class CountVotes extends Component {
                 }
             }
         }
-
+        console.log(count + ' count');
         let index = count.indexOf(Math.max(...count));
         const winning = (Math.max(...count) === 0) ? ("Electify") : (parties[index]);
         this.setState({ countVotes: count, winningParty: winning });
+
+        // this.getChartData(count);
     }
 
-    // getChartData() {
-    //     this.setState({
-    //         chartData: {
-    //             labels: this.state.parties,
-    //             datasets: [
-    //                 {
-    //                     label: 'Vote status',
-    //                     data: this.state.CountVotes,
-    //                     backgroundColor: [
-    //                         'rgba(255, 99, 132, 0.2)',
-    //                         'rgba(54, 162, 235, 0.2)',
-    //                         'rgba(255, 206, 86, 0.2)',
-    //                         'rgba(75, 192, 192, 0.2)',
-    //                         'rgba(153, 102, 255, 0.2)',
-    //                         'rgba(255, 159, 64, 0.2)',
-    //                     ],
-    //                     borderColor: [
-    //                         'rgba(255, 99, 132, 1)',
-    //                         'rgba(54, 162, 235, 1)',
-    //                         'rgba(255, 206, 86, 1)',
-    //                         'rgba(75, 192, 192, 1)',
-    //                         'rgba(153, 102, 255, 1)',
-    //                         'rgba(255, 159, 64, 1)',
-    //                     ],
-    //                     borderWidth: 1,
-    //                 }
-    //             ]
-    //         }
-    //     });
+    // getChartData = (count) => {
+    //     const voteList = count;
+    //     console.log('count ' + count);
+    //     console.log('vote list ' + voteList);
     // }
 
     render() {
-        // if (this.state.loading) {
-        //     return <div>loading...</div>;
-        // }
+        if (this.state.loading) {
+            return <div>loading...</div>;
+        }
 
         return (
             <div className="App">
                 <h3>Election Results</h3>
+                <div>
+                    <BarChart countVotes={this.state.countVotes} />
+                </div>
+                <br />
                 <h3>The winning party is:</h3>
                 <div>
                     <br />
@@ -113,8 +93,7 @@ class CountVotes extends Component {
                         <div>
                             <ul className="right">
                                 <li><NavLink
-                                //  chartData={this.state.chartData} 
-                                 to="/BarChart">BarChart</NavLink></li>
+                                    to="/BarChart">BarChart</NavLink></li>
                             </ul>
                         </div>
                     </nav>
