@@ -5,9 +5,77 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+ word-wrap: break-word;
+
+  background-color: rgb(137, 201, 238);
+  font-family: Georgia, serif;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.voting{
+  width: 250px;
+  height: 250px;
+}
+
+.img{
+  width: 250px;
+  height: 250px;
+}
+
+.App{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.WalletInfo{
+  width: 500px;
+}
+
+.Block{
+  border:1px solid #fff;
+  padding: 5%;
+  margin: 2%;
+}
+
+.Transaction{
+  padding: 5%;
+}
+
+.ConductTransaction, .TransactionPool {
+  margin: 2%;
+}
+
+.card {
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgb(185, 216, 233);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: transform 200ms ease-in;
+}
+
+.container__card{
+  color:teal;
+  background-color:transparent;
+  box-shadow: 0 2px 8px rgb(137, 201, 238);
+  padding:1px;
+  gap: 30px;
+  text-align:center;
+  display:flex;
+  flex-direction:row;
+}
+
+.barchart{
+  width: 900px;
+  height: 450px;
+  background-color: rgb(215, 255, 255);
+}
+
