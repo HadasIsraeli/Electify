@@ -69,7 +69,8 @@ code {
 }
 
 .barchart{
-  width: 800px;
-  height: 400px;
+  width: 900px;
+  height: 450px;
+  background-color: rgb(215, 255, 255);
 }
 
