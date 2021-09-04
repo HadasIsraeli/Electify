@@ -6,10 +6,10 @@ import App from './App';
 
 function LoginApp() {
     const adminUser = {
-        id: "12345",
-        password: "admin12345"
+        id: "123456789",
+        password: "Admin12345!"
     }
-     
+
     // const basicUser={
     //     id: "12345",
     //     password: "basic12345"
@@ -38,6 +38,7 @@ function LoginApp() {
     const Logout = () => {
         console.log("Logout");
         setUser({ name: "", id: "" });
+        this.props.history.push('/');
     }
 
     return (
@@ -45,6 +46,7 @@ function LoginApp() {
             {(user.id !== "") ? (
                 <div className="welcome">
                     <App />
+                    <br />
                     <Button className="bottom" onClick={Logout}>Logout</Button>
                 </div>
             ) : (
