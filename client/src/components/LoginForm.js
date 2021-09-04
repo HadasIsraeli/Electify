@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Button } from 'react-bootstrap';
+import ballot from '../assets/ballot.png';
 
 function LoginForm({ Login, error }) {
     const [details, setDetails] = useState({ name: "", id: "", password: "" });
@@ -13,6 +15,7 @@ function LoginForm({ Login, error }) {
         <form onSubmit={submitHandler}>
             <div className="form-inner">
                 <h2>Login</h2>
+                <br />
                 {(error !== "") ? (
                     <div className="error">{error}</div>) : ""}
                 <div className="form-group">
@@ -27,7 +30,11 @@ function LoginForm({ Login, error }) {
                     <lable htmlFor="password">Password:</lable>
                     <input type="password" name="password" id="password" onChange={e => setDetails({ ...details, password: e.target.value })} value={details.password} />
                 </div>
-                <input type="submit" value="LOGIN" />
+                <Button type="submit" value="LOGIN">Login</Button>
+                <br />
+                <img src={ballot} alt="ballot" className='img' />
+                <br />
+                {/* <input type="submit" value="LOGIN" className='App'/> */}
             </div>
         </form>
     )
